@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PPTController</string>
+    <string name="scan_text">SCANNING</string>
+    <string name="scan_again">SCAN AGAIN</string>
+    <string name="connect">CONNECT</string>
+    <string name="btn_left">PREV</string>
+    <string name="btn_right">NEXT</string>
+    <string name="no_devices_found">No device found</string>
+    <string name="no_connection">Connection failed</string>
+    <string name="no_device_chose">Please choose device</string>
+</resources>
