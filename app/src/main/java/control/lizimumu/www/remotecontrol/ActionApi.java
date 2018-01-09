@@ -26,7 +26,7 @@ class ActionApi {
         Log.d("request", "scanning " + baseUrl);
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl)
-                .client(new OkHttpClient.Builder().connectTimeout(200, TimeUnit.MILLISECONDS).build())
+                .client(new OkHttpClient.Builder().connectTimeout(300, TimeUnit.MILLISECONDS).build())
                 .build();
         ScanService service = retrofit.create(ScanService.class);
         Call<ResponseBody> call = service.doScan();

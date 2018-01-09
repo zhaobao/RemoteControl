@@ -20,7 +20,7 @@ class DevicesManager {
     private IDeviceChangeListener mListener;
     private ExecutorService mExecutor = Executors.newFixedThreadPool(POOL_SIZE);
     private boolean mIsShutDown;
-    private static int POOL_SIZE = 5;
+    private static int POOL_SIZE = 8;
     private static DevicesManager sInstance = new DevicesManager();
 
     private volatile int mAddressOffset = 255;

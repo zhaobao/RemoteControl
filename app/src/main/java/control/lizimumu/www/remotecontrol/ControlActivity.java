@@ -18,14 +18,18 @@ public class ControlActivity extends AppCompatActivity {
     static String CHOSEN_ADDRESS = "chosen";
     private int[] mSongs = {R.raw.s1, R.raw.s2, R.raw.s3, R.raw.s4, R.raw.s5, R.raw.s6, R.raw.s7, R.raw.s8};
     private int mSongIndex = 0;
+    private MediaPlayer mMediaPlayer;
 
     private void play() {
-        final MediaPlayer mediaPlayer = MediaPlayer.create(this, mSongs[mSongIndex++ % mSongs.length]);
-        mediaPlayer.start();
-        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        if (mMediaPlayer != null && mMediaPlayer.isPlaying()) {
+            mMediaPlayer.release();
+        }
+        mMediaPlayer = MediaPlayer.create(this, mSongs[mSongIndex++ % mSongs.length]);
+        mMediaPlayer.start();
+        mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                mediaPlayer.release();
+                mMediaPlayer.release();
             }
         });
     }
