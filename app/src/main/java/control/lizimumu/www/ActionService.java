@@ -1,4 +1,4 @@
-package control.lizimumu.www.remotecontrol;
+package control.lizimumu.www;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -6,6 +6,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 /**
+ *
  * Created by zb on 12/12/2017.
  */
 

@@ -1,4 +1,4 @@
-package control.lizimumu.www.remotecontrol;
+package control.lizimumu.www;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity implements DevicesManager.ID
         mProgress.setVisibility(View.INVISIBLE);
         if (DevicesManager.getsInstance().getDevices().size() == 0) {
             mEmpty.setVisibility(View.VISIBLE);
+            mConnect.setAlpha(1);
             mConnect.setText(R.string.scan_again);
             mCanScanAgain = true;
         }

@@ -3,22 +3,22 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:gravity="center_vertical"
-    android:background="@color/colorPrimary"
+    android:background="?selectableItemBackground"
     android:padding="16dp"
     android:paddingStart="32dp"
     android:paddingEnd="32dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/device_name"
         android:text="192.168.22.189"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:layout_weight="1"
         android:layout_width="0dp"
         android:textSize="16sp"
         android:gravity="center_vertical"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
 
     <RadioButton
         android:id="@+id/device_radio"

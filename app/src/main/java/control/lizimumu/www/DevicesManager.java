@@ -1,4 +1,4 @@
-package control.lizimumu.www.remotecontrol;
+package control.lizimumu.www;
 
 import android.content.Context;
 import android.net.wifi.WifiManager;

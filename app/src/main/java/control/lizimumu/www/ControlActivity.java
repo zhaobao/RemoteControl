@@ -1,4 +1,4 @@
-package control.lizimumu.www.remotecontrol;
+package control.lizimumu.www;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -92,7 +92,9 @@ public class ControlActivity extends AppCompatActivity {
 //                layoutParams.width = (int) (displayWidth * 1f);
 //                layoutParams.height = (int) (displayHeight * 0.7f);
 //                dialog.getWindow().setAttributes(layoutParams);
-                dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+                if (dialog.getWindow() != null) {
+                    dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+                }
             }
         });
     }
