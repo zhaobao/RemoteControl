@@ -1,4 +1,4 @@
-package control.lizimumu.www;
+package control.lizimumu.www.ui;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -6,12 +6,12 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import java.io.IOException;
+import control.lizimumu.www.R;
+import control.lizimumu.www.rest.ActionApi;
 
 public class ControlActivity extends AppCompatActivity {
 

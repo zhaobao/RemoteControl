@@ -1,4 +1,4 @@
-package control.lizimumu.www;
+package control.lizimumu.www.data;
 
 import android.content.Context;
 import android.net.wifi.WifiManager;
@@ -9,12 +9,14 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import control.lizimumu.www.rest.ActionApi;
+
 /**
  * Devices
  * Created by zb on 13/12/2017.
  */
 
-class DevicesManager {
+public class DevicesManager {
 
     private List<String> mDevices;
     private IDeviceChangeListener mListener;
@@ -31,30 +33,30 @@ class DevicesManager {
         mDevices = new ArrayList<>();
     }
 
-    static DevicesManager getsInstance() {
+    public static DevicesManager getsInstance() {
         return sInstance;
     }
 
-    void registerListener(IDeviceChangeListener listener) {
+    public void registerListener(IDeviceChangeListener listener) {
         mListener = listener;
     }
 
-    synchronized void addDevice(String address) {
+    public synchronized void addDevice(String address) {
         if (!mDevices.contains(address)) {
             mDevices.add(address);
             if (mListener != null) mListener.onNewDeviceFound();
         }
     }
 
-    List<String> getDevices() {
+    public List<String> getDevices() {
         return mDevices;
     }
 
-    void clear() {
+    public void clear() {
         mDevices = new ArrayList<>();
     }
 
-    void startScan(Context context) {
+    public void startScan(Context context) {
         mAddressOffset = 255;
         mIsShutDown = false;
         final String ip = getIpAddress(context);
@@ -66,11 +68,11 @@ class DevicesManager {
         }
     }
 
-    void stopScan() {
+    public void stopScan() {
         mIsShutDown = true;
     }
 
-    synchronized void scanNext() {
+    public synchronized void scanNext() {
         mAddressOffset--;
         if (mAddressOffset <= 1) {
             if (mListener != null) {
@@ -106,7 +108,7 @@ class DevicesManager {
         }
     }
 
-    interface IDeviceChangeListener {
+    public interface IDeviceChangeListener {
         void onNewDeviceFound();
 
         void onScanFinished();

@@ -1,4 +1,4 @@
-package control.lizimumu.www;
+package control.lizimumu.www.rest;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,6 +8,8 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import control.lizimumu.www.R;
+import control.lizimumu.www.data.DevicesManager;
 import okhttp3.OkHttpClient;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -20,9 +22,9 @@ import retrofit2.Retrofit;
  * Created by zb on 13/12/2017.
  */
 
-class ActionApi {
+public class ActionApi {
 
-    void newScanTask(final String baseUrl) {
+    public void newScanTask(final String baseUrl) {
         Log.d("request", "scanning " + baseUrl);
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl)
@@ -48,7 +50,7 @@ class ActionApi {
         });
     }
 
-    static void doAction(final String action, String address, final Context context) {
+    public static void doAction(final String action, String address, final Context context) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(address)
                 .client(new OkHttpClient.Builder().connectTimeout(2000, TimeUnit.MILLISECONDS).build())

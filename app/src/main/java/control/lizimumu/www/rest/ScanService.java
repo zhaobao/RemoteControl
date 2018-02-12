@@ -1,4 +1,4 @@
-package control.lizimumu.www;
+package control.lizimumu.www.rest;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;

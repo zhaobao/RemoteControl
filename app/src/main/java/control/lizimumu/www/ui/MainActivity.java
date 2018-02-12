@@ -1,4 +1,4 @@
-package control.lizimumu.www;
+package control.lizimumu.www.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +19,9 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import control.lizimumu.www.R;
+import control.lizimumu.www.data.DevicesManager;
 
 public class MainActivity extends AppCompatActivity implements DevicesManager.IDeviceChangeListener {
 
